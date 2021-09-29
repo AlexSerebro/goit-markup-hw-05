@@ -10,6 +10,8 @@
   --first-logo-color: #000000;
   --sect-team-bg-color: #f5f4fa;
   --cliets-color: #afb1b8;
+  --task-description-bg-color: rgba(47, 48, 58, 0.8);
+  --portf-card-bg-color: rgba(33, 150, 243, 0.9);
 }
 /* global selector */
 html {
@@ -67,6 +69,7 @@ ul {
 
 .link {
   text-decoration: none;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .container {
   margin-left: auto;
@@ -121,6 +124,8 @@ ul {
 }
 
 .active-page {
+  position: relative;
+
   display: block;
   padding-top: 32px;
   padding-bottom: 32px;
@@ -132,6 +137,21 @@ ul {
   line-height: 1.17;
   letter-spacing: 0.02em;
   text-align: left;
+}
+
+.active-page::after {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+
+  content: '';
+
+  display: block;
+
+  width: 100%;
+  height: 4px;
+  background: var(--accent-color);
+  border-radius: 2px;
 }
 
 .logo {
@@ -151,6 +171,7 @@ ul {
 }
 .logo-header {
   color: var(--first-logo-color);
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .logo-header:hover,
 .logo-header:focus {
@@ -239,6 +260,8 @@ ul {
   line-height: 1.88;
   letter-spacing: 0.06em;
   text-align: center;
+
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1), background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .hero-button:hover,
 .hero-button:focus {
@@ -333,6 +356,30 @@ ul {
   margin-bottom: 50px;
 }
 
+.task-list {
+  position: relative;
+}
+.task-description {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 70px;
+  width: 100%;
+  background-color: var(--task-description-bg-color);
+
+  color: var(--white-text-color);
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.143;
+  text-align: center;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
 /* section team */
 .section-team {
   background-color: var(--sect-team-bg-color);
@@ -405,6 +452,7 @@ ul {
   color: var(--cliets-color);
   justify-content: center;
   align-items: center;
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1), background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .soc-link:focus,
@@ -566,6 +614,8 @@ ul {
   border-radius: 22px;
   justify-content: center;
   align-items: center;
+
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .footer-soc-blok {
   justify-content: center;
@@ -591,7 +641,7 @@ ul {
   border-radius: 4px;
   padding: 6px 22px;
   display: inline-block;
-  min-width: 73x;
+  min-width: 73px;
   outline: none;
 
   color: var(--title-text-color);
@@ -601,6 +651,8 @@ ul {
   line-height: 1.63;
   letter-spacing: 0.03em;
   text-align: center;
+
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1), background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .button:hover,
 .button:focus {
@@ -656,9 +708,14 @@ ul {
 .portf-img {
   display: block;
 }
+.portf-link {
+  transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
 
 .portf-link:hover,
 .portf-link:focus {
+  transform: translateY(0);
+
   display: block;
   background: #ffffff;
   /* border: 1px solid #eeeeee; */
@@ -691,4 +748,40 @@ ul {
   line-height: 1.89;
   letter-spacing: 0.03em;
   text-align: left;
+}
+
+.portf-thumb {
+  position: relative;
+  overflow: hidden;
+}
+
+.portf-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translateY(100%);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  display: flex;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  background-color: var(--portf-card-bg-color);
+
+  color: var(--white-text-color);
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.555;
+  letter-spacing: 0.03em;
+}
+
+.portf-link:hover .portf-overlay,
+.portf-link:focus .portf-overlay {
+  transform: translateY(0);
+}
+
+.overlay-text {
+  text-align: left;
+  padding-right: 24px;
+  padding-left: 24px;
 }
