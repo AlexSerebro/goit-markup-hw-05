@@ -58,7 +58,16 @@
       <section class="hero overlay">
         <div class="container">
           <h1 class="hero-title">Эффективные решения для вашего бизнеса</h1>
-          <button type="button" class="hero-button">Заказать услугу</button>
+          <button data-modal-open type="button" class="hero-button">Заказать услугу</button>
+        </div>
+        <div data-modal class="backdrop is-hidden">
+          <div class="modal">
+            <button data-modal-close class="close-btn" type="button">
+              <svg class="modal-svg" width="11" height="11">
+                <use href="./images/symbol-defs.svg#icon-close"></use>
+              </svg>
+            </button>
+          </div>
         </div>
       </section>
 
@@ -122,16 +131,22 @@
           <h2 class="title task-title">Чем мы занимаемся</h2>
           <ul class="list">
             <li class="task-list">
-              <img src="./images/box1.jpg" class="task-img" alt="процес программирования" width="370" height="294" />
-              <div class="task-description"><p>Десктопные приложения</p></div>
+              <div class="task-thumb">
+                <img src="./images/box1.jpg" class="task-img" alt="процес программирования" width="370" height="294" />
+                <p class="task-description">Десктопные приложения</p>
+              </div>
             </li>
             <li class="task-list">
-              <img src="./images/box2.jpg" class="task-img" alt="адаптивная верстка" width="370" height="294" />
-              <div class="task-description"><p>Мобильные приложения</p></div>
+              <div class="task-thumb">
+                <img src="./images/box2.jpg" class="task-img" alt="адаптивная верстка" width="370" height="294" />
+                <p class="task-description">Мобильные приложения</p>
+              </div>
             </li>
             <li class="task-list">
-              <img src="./images/box3.jpg" class="task-img" alt="дизайн" width="370" height="294" />
-              <div class="task-description"><p>Дизайнерские решения</p></div>
+              <div class="task-thumb">
+                <img src="./images/box3.jpg" class="task-img" alt="дизайн" width="370" height="294" />
+                <p class="task-description">Дизайнерские решения</p>
+              </div>
             </li>
           </ul>
         </div>
