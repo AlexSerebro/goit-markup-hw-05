@@ -714,7 +714,6 @@ ul {
   padding: 6px 22px;
   display: inline-block;
   min-width: 73px;
-  outline: none;
 
   color: var(--title-text-color);
   font-family: Roboto;
